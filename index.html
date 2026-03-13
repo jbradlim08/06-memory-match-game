@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emoji Memory Match</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <h1>Emoji Memory Match</h1>
+        <p>Find every pair in the fewest moves.</p>
+      </div>
+      <div class="controls">
+        <label for="difficulty">Difficulty</label>
+        <select id="difficulty">
+          <option value="easy">Easy 4x4</option>
+          <option value="medium">Medium 4x5</option>
+          <option value="hard">Hard 6x6</option>
+        </select>
+        <button id="newGameBtn" type="button">Start New Game</button>
+        <button id="resetBtn" type="button">Reset</button>
+      </div>
+    </header>
+
+    <section class="stats" aria-label="Game statistics">
+      <article>
+        <h2>Moves</h2>
+        <p id="moves">0</p>
+      </article>
+      <article>
+        <h2>Time</h2>
+        <p id="time">00:00</p>
+      </article>
+      <article>
+        <h2>Matches</h2>
+        <p id="matches">0 / 0</p>
+      </article>
+      <article>
+        <h2>Best</h2>
+        <p id="bestScore">-</p>
+      </article>
+    </section>
+
+    <section
+      id="board"
+      class="board"
+      aria-label="Memory card game board"
+    ></section>
+
+    <p id="srStatus" class="sr-only" aria-live="polite"></p>
+  </main>
+
+  <dialog id="winDialog" aria-labelledby="winTitle">
+    <h2 id="winTitle">You matched every card!</h2>
+    <p id="winSummary"></p>
+    <button id="playAgainBtn" type="button">Play Again</button>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
